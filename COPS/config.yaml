@@ -26,6 +26,7 @@ options:
 schema:
   title: str
   library_folder: str
+  filetype_sort: str?
   rsync: bool
   reader: list(monocle|epubjs)
   smtp_host: str?
