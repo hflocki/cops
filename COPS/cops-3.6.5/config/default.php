@@ -168,7 +168,7 @@ $config['default_timezone'] = 'UTC';
  * The two first will be displayed in book entries
  * The other only appear in book detail
  */
-$config['cops_prefered_format'] = ['EPUB', 'PDF', 'AZW3', 'AZW', 'MOBI', 'CBR', 'CBZ'];
+$config['cops_prefered_format'] = ['EPUB', 'MOBI', 'PDF', 'AZW3', 'AZW', 'CBR', 'CBZ'];
 
 /*
  * Specify the ignored formats that will never display in COPS
