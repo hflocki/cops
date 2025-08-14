@@ -1,4 +1,4 @@
-name: "HA COPS"
+name: "HA COPS Fork"
 version: "1.36"
 slug: "ha-cops"
 description: "Minimal Calibre library web interface"
