@@ -21,6 +21,18 @@ CONFIG_STR+=$(
 END_HEREDOC_READER
 )
 
+# Option für bevorzugte File-Formate
+FILETYPE_SORT=$(bashio::config 'filetype_sort')
+if [ "$FILETYPE_SORT" != "null" ] && [ -n "$FILETYPE_SORT" ]; then
+    # Komma-getrennte Liste in PHP-Array umwandeln, Whitespaces entfernen
+    FORMATS=$(echo "$FILETYPE_SORT" | tr ',' '\n' | sed "s/^[ ]*//;s/[ ]*$//" | awk '{printf "\"%s\",",$1}' | sed 's/,$//')
+    CONFIG_STR+=$(
+        cat << END_HEREDOC_FILETYPE
+\$config['cops_prefered_format'] = array($FORMATS);
+END_HEREDOC_FILETYPE
+    )
+fi
+
 # Set up mail server details to allow emailing of books
 if [ "$(bashio::config 'smtp_host')" != "null" ]
 then
